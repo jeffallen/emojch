@@ -1,0 +1,11 @@
+body {
+    font-family: 'Sans'
+}
+
+.search {
+    font-size: 48pt
+}
+
+.emoj {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+}

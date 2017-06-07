@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Like this?</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div align="center">
+      {{if .Emojis}}
+        {{range .Emojis}}
+          <span class="emoj" style="font-size: 150pt">{{.Char}}</span>
+        {{end}}
+      {{else}}
+          <p style="font-size: 60pt">I got nothin’. <span class="emoj">☹</span></p>
+      {{end}}
+    </div>
+  </body>
+</html>

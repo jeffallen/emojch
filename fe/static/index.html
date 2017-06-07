@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Find the perfect emoji</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div align="center">
+      <p id="heromoji" class="emoj" style="font-size: 200px"/>
+    </div>
+    <div align="center">
+      <form action="search" class="search">
+	<span style="line-height:200%">Whatcha lookin&rsquo; for?<br></span>
+	<input class="search" name="q" style="text-align: center">
+      </form>
+    </div>
+  </body>
+  <script>
+    window.onload = function() {
+      h = document.getElementById("heromoji");
+      h.innerHTML = '☺';
+    }
+  </script>
+</html>
