@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Connect to Cassandra to make keyspace
-	cluster := gocql.NewCluster("127.0.0.1")
+	cluster := gocql.NewCluster("cassandra")
 	cluster.Timeout = 10 * time.Second
 	s, err := cluster.CreateSession()
 	qe := gocassa.GoCQLSessionToQueryExecutor(s)

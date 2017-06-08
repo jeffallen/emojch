@@ -26,7 +26,7 @@ type Emoji struct {
 }
 
 func Search(w http.ResponseWriter, r *http.Request) {
-	url := fmt.Sprintf("http://localhost:8001/search/%s", url.PathEscape(r.FormValue("q")))
+	url := fmt.Sprintf("http://search/%s", url.PathEscape(r.FormValue("q")))
 	log.Println("search", url)
 	resp, err := http.Get(url)
 	var all []byte
