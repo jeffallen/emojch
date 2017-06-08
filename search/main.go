@@ -7,6 +7,7 @@ import (
 
 	"github.com/gocassa/gocassa"
 	"github.com/gocql/gocql"
+	"github.com/agonopol/go-stem"
 )
 
 // SearchResult is the top-level struct returned
@@ -38,10 +39,19 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		ClusteringColumns: []string{"Name"},
 	})
 
+	tryStem := true
 	res := make([]Search, 0, 100)
+
+      retry:
 	if err := tbl.Where(gocassa.Eq("Search", in)).Read(&res).Run(); err != nil {
 		result.Error = err.Error()
 	} else {
+		if tryStem && len(res) == 0 {
+			tryStem = false
+			in = string(stemmer.Stem([]byte(in)))
+			goto retry
+		}
+
 		result.Emojis = make([]Emoji, len(res))
 		for i, s := range res {
 			result.Emojis[i].Char = s.Char

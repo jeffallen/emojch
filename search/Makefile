@@ -1,4 +1,4 @@
-VER=3
+VER=4
 
 docker: search
 	docker build -t jeffallen/emojch-search:$(VER) .

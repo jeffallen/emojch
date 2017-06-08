@@ -1,4 +1,4 @@
-VER=3
+VER=4
 
 docker: fe
 	docker build -t jeffallen/emojch-fe:$(VER) .
